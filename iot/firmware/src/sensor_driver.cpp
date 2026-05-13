@@ -336,10 +336,10 @@ bool PersistentFailureCounter::record(bool is_valid) {
 // =============================================================================
 
 #ifdef ARDUINO
-// Instância global do driver DHT22. Usa o GPIO configurado via
-// :func:`SensorDriver::iniciar`. O tipo ``DHT22`` é definido pela
-// biblioteca ``DHT sensor library``.
-static DHT dht_(2, DHT22);  // GPIO 2 é placeholder — reconfigurado em ``iniciar``
+// Instância global do driver DHT22. O pino é definido em main.cpp
+// como PIN_DHT22 = 15. A biblioteca DHT exige o pino no construtor,
+// portanto usamos diretamente o GPIO 15 aqui.
+static DHT dht_(15, DHT22);
 #endif
 
 // -----------------------------------------------------------------------------
