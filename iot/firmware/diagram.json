@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "CardioIA - Fase 3 (Mario Melo Filho RM563769, Stephanie Dias dos Santos RM564315)",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": -20,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -100,
+      "left": 230,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 80,
+      "left": 230,
+      "attrs": { "color": "red", "label": "Pulso cardíaco" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 170,
+      "left": 230,
+      "attrs": { "color": "blue", "label": "Wi-Fi ON/OFF" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -50,
+      "left": 310,
+      "rotate": 90,
+      "attrs": { "value": "10000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v:0" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v:0" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v:0" ] ],
+    [ "r1:1", "esp:3V3", "red", [ "v:0" ] ],
+    [ "r1:2", "dht1:SDA", "green", [ "v:0" ] ],
+    [ "btn1:1.l", "esp:D4", "orange", [ "v:0" ] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [ "v:0" ] ],
+    [ "btn2:1.l", "esp:D2", "blue", [ "v:0" ] ],
+    [ "btn2:2.l", "esp:GND.1", "black", [ "v:0" ] ]
+  ]
+}
