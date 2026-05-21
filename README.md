@@ -242,3 +242,36 @@ Não são dados reais de pacientes.
 ---
 
 *Projeto acadêmico — FIAP Ano 2, Fase 2 | CardioIA: A Nova Era da Cardiologia Inteligente*
+
+---
+
+## Fase 3 – Monitoramento IoT
+
+> **CardioIA: Monitoramento Contínuo de Pacientes Cardiológicos via IoT**
+
+O módulo IoT estende o projeto CardioIA com um protótipo de sistema vestível simulado no Wokwi (ESP32 + DHT22 + botões), integrado a um broker MQTT em nuvem (HiveMQ Cloud) e a um dashboard Node-RED com alertas automáticos.
+
+### Documentação e Entregáveis
+
+| Artefato | Caminho |
+|----------|---------|
+| Código-fonte do firmware (C++) | [`iot/firmware/src/`](iot/firmware/src/) |
+| README do módulo IoT | [`iot/README.md`](iot/README.md) |
+| Relatório Parte 1 (Edge Computing) | [`iot/docs/RELATORIO_PARTE1.pdf`](iot/docs/RELATORIO_PARTE1.pdf) |
+| Relatório Parte 2 (Cloud + Dashboard) | [`iot/docs/RELATORIO_PARTE2.pdf`](iot/docs/RELATORIO_PARTE2.pdf) |
+| Fluxo Node-RED exportado | [`iot/dashboard/cardioia_flow.json`](iot/dashboard/cardioia_flow.json) |
+| Screenshots do dashboard | [`iot/dashboard/screenshots/`](iot/dashboard/screenshots/) |
+| Convenções de código | [`iot/docs/CONVENCOES.md`](iot/docs/CONVENCOES.md) |
+| Segurança e LGPD | [`iot/docs/SEGURANCA_LGPD.md`](iot/docs/SEGURANCA_LGPD.md) |
+
+### Como executar
+
+```bash
+# Testes property-based (Python + hypothesis)
+make iot-test
+
+# Validar entregáveis
+make iot-export
+```
+
+Para detalhes completos, consulte [`iot/README.md`](iot/README.md).

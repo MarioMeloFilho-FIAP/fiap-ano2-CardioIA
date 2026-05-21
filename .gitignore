@@ -30,3 +30,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# --- CardioIA Fase 3 – IoT ---
+iot/firmware/.pio/
+iot/firmware/.vscode/
+iot/firmware/src/secrets.h
+iot/firmware/include/secrets.h
